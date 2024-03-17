@@ -1,0 +1,35 @@
+using namespace std;
+
+vec3 getOffset(vec3 effectorPosition, vec3 worldPosition, float effectorStrength, float fieldSize, float fieldFalloffPower){
+
+  vec3 directionMagnitude = effectorPosition - worldPosition.xyz;
+
+  // Only expand. Always move in the direction of normals.
+  directionMagnitude *= step(0., dot(getVertexNormal(), directionMagnitude));
+
+  float distanceField = max(0., fieldSize - distance(effectorPosition, worldPosition.xyz));
+  
+  // modify falloff curve here
+  distanceField = pow(distanceField, fieldFalloffPower);
+
+  vec3 offset = directionMagnitude * distanceField * effectorStrength;
+
+  return offset;
+}
+
+//@param[default=0.3] fieldSize
+//@param[default=2.0] effectorStrength
+//@param[default=2.0] fieldFalloffPower
+void main(vec3 effectorPositionA, vec3 effectorPositionB, float fieldSize, float effectorStrength, float fieldFalloffPower, out vec4 Color, out vec4 Position) {
+  
+  vec2 uv = fragment(getVertexTexCoord());
+  vec3 normals = getFragmentNormal();
+  vec4 localPosition = getVertexPosition();
+  vec4 worldPosition = getModelMatrix() * localPosition;
+
+  vec3 offset = getOffset(effectorPositionA, worldPosition.xyz, effectorStrength, fieldSize, fieldFalloffPower) + 
+                getOffset(effectorPositionB, worldPosition.xyz, effectorStrength, fieldSize, fieldFalloffPower);
+
+  Color = uv.xy01;
+  Position = getViewProjectionMatrix() * (worldPosition + offset.xyz0);
+}

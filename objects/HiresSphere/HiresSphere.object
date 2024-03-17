@@ -1,0 +1,84 @@
+{
+  "modelName": "master3_d_object_model",
+  "name": "HiresSphere",
+  "identifier": "master3_d_object_model:311346-0fd9b1cc-6372-4281-a193-4980466ae7d4",
+  "sourceIdentifier": "asset_collection_model:311350-0fd9b1cc-6372-4281-a193-4980466ae7d4",
+  "animationMask": {
+    "position": false,
+    "rotation": false,
+    "scale": false
+  },
+  "cameraVisibility": "back|front",
+  "depth": 0.04972612112760544,
+  "globalScaleFactor": 1,
+  "height": 0.04999999701976776,
+  "hidden": false,
+  "layerIdentifier": "layer0",
+  "outputVisibility": "preview|capture",
+  "physicsEnabled": false,
+  "tags": [],
+  "transform": {
+    "rx": 0,
+    "ry": 0,
+    "rz": 0,
+    "sx": 1,
+    "sy": 1,
+    "sz": 1,
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "width": 0.050000011920928955,
+  "children": [
+    {
+      "modelName": "mesh",
+      "name": "HiresSphere",
+      "identifier": "mesh:311336-0fd9b1cc-6372-4281-a193-4980466ae7d4",
+      "animationMask": {
+        "position": false,
+        "rotation": false,
+        "scale": false
+      },
+      "cameraVisibility": "back|front",
+      "castShadow": false,
+      "hidden": false,
+      "layerIdentifier": "layer0",
+      "nodeName": "HiresSphere",
+      "numberOfFaces": 1740,
+      "outputVisibility": "preview|capture",
+      "physicsEnabled": false,
+      "prefabIdentifier": "gltf:311340-0fd9b1cc-6372-4281-a193-4980466ae7d4",
+      "receiveShadow": false,
+      "renderPass": "main_scene",
+      "tags": [],
+      "transform": {
+        "rx": 0,
+        "ry": 0,
+        "rz": 0,
+        "sx": 1,
+        "sy": 1,
+        "sz": 1,
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "useEmbeddedBlendshapes": false,
+      "children": [
+        {
+          "modelName": "surfaces",
+          "identifier": "surfaces:311338-0fd9b1cc-6372-4281-a193-4980466ae7d4",
+          "children": [
+            {
+              "modelName": "surface",
+              "name": "surface0",
+              "identifier": "surface:311343-0fd9b1cc-6372-4281-a193-4980466ae7d4",
+              "isMaterialIdentifierEnabled": true,
+              "materialIdentifier": "dependent_metallic_roughness_p_b_r_material_model:311334-0fd9b1cc-6372-4281-a193-4980466ae7d4",
+              "surfaceGroupIdentifier": "311344-0fd9b1cc-6372-4281-a193-4980466ae7d4"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
